@@ -6,6 +6,11 @@ How lazy?
 - Only one component
 - The only parameter is optional
 
+## Install
+```
+npm i react-lazy-dark-theme
+```
+
 ## How to use
 Prerequisite: a light themed page.
 

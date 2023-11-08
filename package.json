@@ -1,6 +1,6 @@
 {
     "name": "react-lazy-dark-theme",
-    "private": true,
+    "private": false,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
@@ -23,5 +23,35 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.3",
         "vite": "^4.4.5"
-    }
+    },
+    "engines": {
+        "npm": ">=9.0.0",
+        "node": ">= 18.0.0"
+    },
+    "main": "./release/react-lazy-dark-theme.umd.js",
+    "module": "./release/react-lazy-dark-theme.es.js",
+    "exports": {
+        ".": {
+            "import": "./release/react-lazy-dark-theme.es.js",
+            "require": "./release/react-lazy-dark-theme.umd.js"
+        }
+    },
+    "description": "Dark theme without CSS.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/urfdvw/react-lazy-dark-theme.git"
+    },
+    "keywords": [
+        "react",
+        "dark",
+        "theme",
+        "dark theme"
+    ],
+    "author": "River Wang",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/urfdvw/react-lazy-dark-theme/issues"
+    },
+    "homepage": "https://github.com/urfdvw/react-lazy-dark-theme#readme"
+
 }
