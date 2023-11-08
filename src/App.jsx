@@ -2,14 +2,15 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
-import DarkTheme from "./react-lazy-dark-theme";
+import DarkTheme from "react-lazy-dark-theme";
 
 function App() {
-    const [count, setCount] = useState(0);
+    const [dark, setDark] = useState(null);
+    console.log(dark);
 
     return (
         <>
-            <DarkTheme />
+            <DarkTheme dark={dark} />
             <div>
                 <a href="https://vitejs.dev" target="_blank">
                     <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -20,7 +21,25 @@ function App() {
             </div>
             <h1>Vite + React</h1>
             <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+                <select
+                    onChange={(e) => {
+                        switch (e.target.value) {
+                            case "Dark":
+                                setDark(true);
+                                break;
+                            case "Light":
+                                setDark(false);
+                                break;
+                            case "System":
+                                setDark(null);
+                                break;
+                        }
+                    }}
+                >
+                    <option>System</option>
+                    <option>Dark</option>
+                    <option>Light</option>
+                </select>
                 <p>
                     Edit <code>src/App.jsx</code> and save to test HMR
                 </p>
