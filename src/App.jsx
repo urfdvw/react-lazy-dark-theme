@@ -4,6 +4,12 @@ import viteLogo from "./assets/vite.svg";
 import "./App.css";
 import DarkTheme from "react-lazy-dark-theme";
 
+const options = {
+    Dark: true,
+    Light: false,
+    System: null,
+};
+
 function App() {
     const [dark, setDark] = useState(null);
     console.log(dark);
@@ -23,26 +29,14 @@ function App() {
             <div className="card">
                 <select
                     onChange={(e) => {
-                        switch (e.target.value) {
-                            case "Dark":
-                                setDark(true);
-                                break;
-                            case "Light":
-                                setDark(false);
-                                break;
-                            case "System":
-                                setDark(null);
-                                break;
-                        }
+                        setDark(options[e.target.value]);
                     }}
                 >
                     <option>System</option>
                     <option>Dark</option>
                     <option>Light</option>
                 </select>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
+                <p>react-lazy-dark-theme demo.</p>
             </div>
             <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
         </>
