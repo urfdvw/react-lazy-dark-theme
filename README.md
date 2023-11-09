@@ -32,6 +32,13 @@ With the example above, the page theme should follow the OS theme (Dark/Light).
 If you want to force dark or light,
 use `<DarkTheme dark={true} />` or `<DarkTheme dark={false} />`.
 
+## Demo
+https://urfdvw.github.io/react-lazy-dark-theme/
+
+In this demo is basically the example code of Vite + React.
+But the css file for all colors is removed.
+So the color theme is fully controlled by this library.
+
 ## Limitations
 This solution works extremely well on
 - plain text
