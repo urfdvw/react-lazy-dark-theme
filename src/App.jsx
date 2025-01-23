@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
-import DarkTheme from "./react-lazy-dark-theme";
+import DarkTheme, { NoTheme } from "./react-lazy-dark-theme";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -11,11 +11,15 @@ function App() {
         <>
             <DarkTheme />
             <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
+                <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+                    <NoTheme>
+                        <img src={viteLogo} className="logo" alt="Vite logo" />
+                    </NoTheme>
                 </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
+                <a href="https://react.dev" target="_blank" rel="noreferrer">
+                    <NoTheme>
+                        <img src={reactLogo} className="logo react" alt="React logo" />
+                    </NoTheme>
                 </a>
             </div>
             <h1>Vite + React</h1>
