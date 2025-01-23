@@ -4,14 +4,14 @@ The laziest way to enable dark theme in your page.
 How lazy?
 - No CSS
 - Only one component
-- The only parameter is optional
+- All parameters are optional
 
 ## Install
 ```
 npm i react-lazy-dark-theme
 ```
 
-## How to use
+## Quick Start
 Prerequisite: a light themed page.
 
 Import and use the component anywhere in the page.
@@ -29,8 +29,32 @@ export default function App() {
     )
 ```
 With the example above, the page theme should follow the OS theme (Dark/Light).
-If you want to force dark or light,
-use `<DarkTheme dark={true} />` or `<DarkTheme dark={false} />`.
+
+## How to use
+
+### `DarkTheme` Component
+
+`import DarkTheme from "react-lazy-dark-theme";`
+
+When it exists in the page, the whole page will follow the theme set by this component.
+
+#### Parameters
+`dark={null}` choose within these values
+- null: follow system
+- true: dark theme
+- false: light theme
+
+`highContrast={false}` choose within these values
+- false: giving a grayish style to view better in the dark environment.
+- true: giving a high contrast style to view better on projector
+
+### `NoTheme` Component
+
+`import {NoTheme} from "react-lazy-dark-theme";`
+
+When a component is wrapped with this component, it will not follow the theme settings and remain the original look.
+it is suggested to use this over images and videos.
+
 
 ## Demo
 https://urfdvw.github.io/react-lazy-dark-theme/
@@ -55,3 +79,5 @@ Works bad on
 
 Works extremely bad on
 - anything shoot from cameras
+
+For anything that looks weird, please wrap with `NoTheme` component.
